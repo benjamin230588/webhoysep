@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    benjamin huaman 
+    <p>cambio de servidor</p>
+
+    <script>
+    "use strict";
+    const cantidadcadena=(cadena) =>{
+
+        if(!cadena)
+        {
+            console.log("Ingrese una cadena");
+
+        }
+        else
+        {
+            
+            console.log("la cantidad es  " + cadena.length);
+        }
+    }
+    function cantidadcaracteres(cadena)
+    {
+        if(!cadena)
+        {
+            console.log("Ingrese una cadena");
+
+        }
+        else
+        {
+            
+            console.log("la cantidad es  " + cadena.length);
+        }
+        
+
+    }
+
+    function recortarcaracteres(cadena,corte)
+    {
+        let res=cadena.substring(0,corte);
+        return res;
+
+    }
+    function crearcaracteres(cadena)
+    {
+        let res="";
+        res=cadena.split(" ");
+        
+        return res;
+
+    }
+    function repetircaracteres(cadena,param)
+    {
+        let res="";
+        
+        for(let i=1 ; i <= param ; i++)
+        {
+          res= cadena + " " + res; 
+        }
+        return res;
+
+    }
+
+    function obtenercaracteres(cadena)
+    {
+        let res="";
+        
+        for(let i=0 ; i <= cadena.length ; i++)
+        {
+          res= cadena.charAt(i) + res;
+        }
+        console.log(res);
+
+    }
+
+
+    const repetcaracteres = (cadena="",param=undefined) =>
+    {
+        if (!cadena) return console.log("valor invalido") 
+        if (param===undefined) return console.log("cantidad no permitida") 
+        if (param===0) return console.log("valor cero no valido") 
+        if (Math.sign(param)===-1) return console.log("valor negativo no valido") 
+
+        
+        for(let i=0 ; i <= param ; i++)
+        {
+          res= cadena + " " + res; 
+          console.log(cadena + " " + i);
+        }
+    
+
+    }
+
+    function vecescaracteres(cadena,parte)
+    {
+        let i=0;
+        let contador=0;
+        while(i !== -1)
+        {
+            i = cadena.indexOf(parte,i);
+            if (i !== -1) 
+            {
+                console.log(i)
+                i++;
+                contador++;
+            }
+
+            
+
+        }
+
+        console.log(contador);
+        
+         
+
+    }
+    
+    cantidadcaracteres("benjamin");
+    
+    var res=recortarcaracteres("benjamin",5);
+    console.log(res);
+    let repetidas=repetircaracteres("benja",3);
+    console.log(repetidas);
+    let repet=crearcaracteres("benjamin huaman soto");
+    console.log(repet);
+    
+    let fecha = Boolean(true);
+    console.log(fecha);
+
+    
+    let fecha2 = String("benjamin");
+    console.log(fecha2);
+
+    cantidadcadena("beto");
+    repetcaracteres("benja",-5);
+     
+    obtenercaracteres("hola");
+    vecescaracteres("hola mundo hola mundo hola benjamin","hola");
+    if (true) console.log("esverdarero");
+    else console.log("si es continua"); 
+    
+    let argm= (false) ? " es verdadero" :" es falso";
+    console.log(argm);
+
+    const ejemplo ={
+        name: "benjamin",
+        dame : function(){
+            console.log(this);
+            console.log("mi nobre es" + this.name)
+        }
+
+    }
+
+    //let valor23 =ejemplo.dame;
+    //valor23();
+    const aleatorio= () => console.log(Math.round((Math.random() * 100)+500));
+    aleatorio();
+    if(1===1 || 8===2)
+    {
+        console.log("correcto");
+    }
+    else
+    {
+        console.log("falso");
+    }
+
+    console.log("inicio");
+    
+    let numero1=12;
+    let numero2=0;
+    let resultado = numero1/numero2;
+    console.log(resultado);
+    console.log("final");
+    console.error("esto es un error");
+    console.warn("esto es una advertiencia");
+    console.info("informacion");
+    
+    var obj = {
+    num: 1,
+    text: "text",
+    sub: {
+        arr: [1,2,3],
+        non: null
+    }
+};
+
+//console.dir(obj);
+let cadena23 ="\"benjamin huaaman soto\"";
+console.log(cadena23);
+    
+    </script>
+</body>
+</html>

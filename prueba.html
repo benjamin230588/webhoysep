@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+
+<body>
+    <input type="button" value="Crear nodo tipo elemento y definir el atributo href" onClick="crearElementoyAtributo()">
+    <div id="direccion">
+    </div>
+    <script>
+
+function crearElementoyAtributo() {
+    let cadena ="2020-05-13";
+    let prb= cadena.replace(/-/g,"");
+    let vector=cadena.split("-");
+    let resul= vector[2] + vector[1] + vector[0];
+    alert(resul);
+}
+    </script>
+</body>
+
+</html>

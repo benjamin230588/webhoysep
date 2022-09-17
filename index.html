@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    benjamin huaman 
+    <p>cambio de servidor</p>
+
+    <script>
+     var objglobal ="benjamin";
+     var benjamin;
+     let global23="otro";
+     var objglobal=23;
+     //if(1==1)
+     function prueba()
+     {
+         var objetolet="huaman";
+         console.log(objetolet)
+         console.log(global23);
+
+     }
+     console.log(objglobal);
+     prueba()
+     console.log(benjamin);
+     let cadena="cadena";
+     console.log(cadena.toUpperCase());
+     console.log(typeof(objglobal));
+     const arreglo= [1,2,3,4];
+     console.log(arreglo);
+     console.log(typeof(arreglo));
+     let cadena23 = new String("cadena");
+     console.log(cadena23);
+     
+     
+     function Animal (nombre,apellido)
+     {
+         //nombre,apellido
+         this.nombre="benja";
+         this.apellido="huaman";
+         
+
+     }
+     Animal.prototype.correr=function(){
+             console.log("hoy juegamos");
+     }
+         
+     const lucas= new Animal("benjamin","huaman");
+     
+     console.log(lucas.__proto__);
+     console.log(arreglo);
+     
+// el motor mismo de javascript es sincrono ejecuta una tarea a la vez
+// los navegadores implementan web api y retornan las calback al motor de javascrip
+// promesas  calbacks async await
+// el dom, api fech ,ajax
+    </script>
+</body>
+</html>

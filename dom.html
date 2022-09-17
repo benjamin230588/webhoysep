@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body {
+    font-family:  Helvetica, sans-serif;
+    font-family: 'PT Sans'; /* Otro ejemplo */
+}
+p {
+  font-family:  tahoma,Verdana, Geneva, Tahoma, sans-serif;
+}
+    </style>
+</head>
+<body>
+    
+    <div id="bloque">
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+        <p>Este es el tercer párrafo</p>
+    </div>
+    <input type="button" value="Cantidad de Hijos del DIV" onClick="cantidadHijos()">
+    <script>
+         let tit = document.getElementById('bloque')
+         console.log(tit);
+         console.log(document.body);
+         console.log(document.scripts);
+function cantidadHijos() {
+    let lista = document.getElementById('bloque')
+    alert('La cantidad de hijos del nodo div es:' + lista.childNodes.length)
+    let cadena = ""
+    for (let x = 0; x < lista.childNodes.length; x++) {
+        if (lista.childNodes[x].nodeType == Node.TEXT_NODE)
+            cadena = cadena + "Nodo tipo Texto\n"
+        if (lista.childNodes[x].nodeType == Node.ELEMENT_NODE)
+            cadena = cadena + "Nodo tipo Elemento\n"
+    }
+    alert(cadena)
+}
+    </script>
+</body>
+</html>

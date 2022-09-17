@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <div id="menu"></div>
+
+    <script>
+         const animal = {
+      nombre: "Snoopy",
+      apellido:"huaman",
+      sonar() {
+        console.log("Hago sonidos por que estoy vivo");
+      }
+    }
+
+      function Animal(nombre, genero) {
+       //Atributos
+       this.nombre = nombre;
+       this.genero = genero;
+     } 
+
+    //Métodos agregados al prototipo de la función constructora
+     Animal.prototype.sonar = function () {
+      console.log("Hago sonidos por que estoy vivo");
+    }
+    Animal.prototype.saludar = function () {
+      console.log(`Hola me llamo ${this.nombre}`);
+    } 
+
+    //const snoopy = new Perro("Snoopy", "Macho"),
+    //lolaBunny = new Animal("Lola Bunny", "Hembra");
+    //console.log(snoopy);
+    //console.log(lolaBunny);
+
+
+    //Herencia Prototípica
+     function Perro(nombre, genero, tamanio) {
+      this.super = Animal;
+      this.super(nombre, genero);
+      this.tamanio = tamanio;
+    } 
+
+    //Perro está heredando de Animal
+     Perro.prototype = new Animal();
+     Perro.prototype.constructor = Perro; 
+
+    //Sobreescritura de métodos del Prototipo padre en el hijo
+  //   Perro.prototype.sonar = function () {
+    //  console.log("Soy un perro y mi sonido es un ladrido");
+   // }
+    Perro.prototype.ladrar = function () {
+      console.log("Guauuu Guauuu !!!!");
+    } 
+
+     const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
+      lolaBunny = new Animal("Lola Bunny", "Hembra");
+    console.log(snoopy);
+    console.log(lolaBunny);
+   /* snoopy.sonar();
+    snoopy.saludar();
+    snoopy.ladrar();
+    lolaBunny.sonar();
+    lolaBunny.saludar();  */
+
+     class Animal23 {
+      //el constructor es un método especial que se ejecuta en el momento de instanciar la clase
+      constructor(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+      }
+      //Métodos
+      sonar() {
+        console.log("Hago sonidos por que estoy vivo");
+      }
+      saludar() {
+        console.log(`Hola me llamo ${this.nombre}`);
+      }
+    }
+
+    const lolaBunny23 = new Animal23("Bunny", "Hembra");
+    console.log(lolaBunny23);
+
+    </script>
+
+</body>
+
+</html>

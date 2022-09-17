@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Canvas example</title>
+<script>
+function draw()
+{
+  var ctx = document.querySelector("canvas").getContext("2d");
+  // First square
+  ctx.fillRect(10, 10, 50, 50);
+  // Second square
+  ctx.fillRect(100, 100, 50, 50);
+}
+
+window.onload = draw;
+</script>
+<body>
+<canvas></canvas>
+<svg version="1.1"
+     baseProfile="full"
+     width="300" height="200"
+     xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="black" />
+  <circle cx="150" cy="100" r="90" fill="blue" />
+</svg>
+
+<img
+    src="prueba.svg"
+    alt="triangle with all three sides equal"
+    height="87"
+    width="100" />
+
+  
+<input type="radio" name="estudios1" value="1">Sin estudios<br>
+<input type="radio" name="estudios1" value="2">Primario<br>
+<input type="radio" name="estudios2" value="3">Secundario<br>
+<input type="radio" name="estudios2" value="4">Universitario<br>
+</body>
+</html>

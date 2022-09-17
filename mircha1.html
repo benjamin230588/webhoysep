@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Benjamin huaman soto</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur placeat soluta, quidem voluptates at facere maiores! Pariatur praesentium, enim quia consequuntur nam vel tempore dolor, amet repellendus blanditiis vitae reprehenderit?</p>
+    
+    <script>
+
+     const invertircadena =(cadena ="") => {
+
+    (!cadena) ? console.error("debe de enviar una cadena") 
+     : console.info(cadena.split("").reverse().join(""));
+         
+    }
+
+    //invertircadena("jamon");
+
+    function vecescaracteres(cadena,parte)
+    {
+        if (!cadena) return console.error("no hay cadena");
+        if (!parte) return console.error("no hay parte");
+        
+        let i=0;
+        let contador=0;
+        while(i !== -1)
+        {
+            i = cadena.indexOf(parte,i);
+            if (i !== -1) 
+            {
+                //console.log(i)
+                i++;
+                contador++;
+            }
+
+        }
+
+        return console.log(contador);
+        
+         
+
+    }
+   // vecescaracteres("benjamin huaman soto benjamin","benja");
+   const aleatorio= () => {
+   console.log(Math.round((Math.random() * 100)+500));}
+
+   //aleatorio()
+   const capicua =(numero=0) => {
+    if (!numero) return console.error("no hay numero");
+    if (typeof(numero) !=="number") return console.error("no has ingresado un numero");
+    
+    numero = numero.toString();
+    let reverso=numero.split("").reverse().join("");
+    
+    (numero===reverso) ?  console.info("el numero es capicua")
+     :  console.info("no es el numero");
+
+
+   }
+   //capicua(2002)
+   const factorial = (numero=undefined) => {
+    if (numero===undefined) return console.error("ingrese un numero");
+    if (typeof(numero) !=="number") return console.error("no has ingresado un numero");
+    if (numero===0) return console.error("no es valido cero");
+    if (Math.sign(numero)===-1) return console.error("negativo no permitido");
+    
+
+    let resul=1;
+    for(let i =1 ; i<=numero ;i++)
+    {
+        resul= resul*i;
+    }
+    console.info("el numero " + resul);
+   }
+   //factorial(5);
+
+   const numeroprimo = (numero) => {
+    
+    let valor=false;
+
+    for(let i=2 ; i< numero ; i++)
+    {
+        if (numero % i===0)
+        {
+            valor=true;
+            break;
+
+        }
+    }
+
+    return (valor) ?  console.info("el numero no es  primo ")
+     : console.info("el numero es primo");
+    
+
+   }
+
+   const numeropar = (numero) => {
+    
+    let valor=false;
+
+    
+    if (numero % 2===0)
+    {
+        valor=true;
+    
+
+    }
+    
+
+    return (valor) ?  console.info("el numero es par ")
+     : console.info("el numero es impar");
+    
+
+   }
+
+   const sistemadecimal = (numero) => {
+    
+    let numerodecimal=numero.toString();
+    let res=0;
+    for(let i=0 ; i < numerodecimal.length ; i++)
+    {
+          res= res +  (numerodecimal.charAt(i))*(Math.pow(2,numerodecimal.length-(i+1)));
+    }
+    
+    
+
+     console.info("el numero es  " + res);
+     
+    
+
+   }
+
+   //numeroprimo(2);
+   //numeropar(4);
+   //sistemadecimal(1100);
+   const sistemabinario = (numero = undefined,base=undefined) =>{
+
+   if (base===2)
+   {
+    console.info(numero + " en base " + base + " = " +  parseInt(numero,base) + " en base 10");
+   }
+   else if(base===10)
+
+    console.info(numero + " en base " + base + "="+  numero.toString(2) + " en base 2");
+  
+   }
+
+   //sistemabinario(4,10);
+
+   const descuento=(monto,desc) => {
+
+    let res = monto-desc;
+
+    console.info(" el total es " + res);
+   }
+
+   //descuento(100,20);
+
+
+   const fechas= (fecha)=> 
+   {
+       let actual = new Date();
+       let anoactual=actual.getFullYear();
+       let anopasado= fecha.getFullYear();
+
+       console.info(" diferencia " + (anoactual));
+       console.info(" diferencia " + (anopasado));
+
+
+       console.info(" diferencia " + (anoactual - anopasado));
+
+   }
+
+   //fechas(new Date(2010,10,23)) 
+   
+   const validicion = () =>
+   {
+        let patron = /^lalo/;
+        if( patron.test("benjamin") ) console.log("si coincide");
+
+   }
+   /*validicion();
+   let patron =/[aeiou]/;
+   if (patron.test("5sofia"))
+       console.log("si coincide");
+    else
+      console.log("no coincide");
+*/
+  //let cadena ="benjam\in";
+  //console.log(cadena);
+
+  const contarletras = (cadena)=>{
+
+    let vocales=0,consonates=0;
+    cadena=cadena.toLowerCase();
+    for(let letra of cadena)
+    {
+        if(/[aeiou]/.test(letra))
+        {
+          vocales++;
+        }
+        if(/[bcdfghjklmnpqrs]/.test(letra))
+        {
+          consonates++;
+        }
+    }
+    console.log({cadena,vocales,consonates});
+  }
+
+  //contarletras("benjamin")
+  const validanombre =(nombre="") =>{
+    if (!nombre) return console.error("ingrese un numero");
+    if (typeof(nombre) !=="string") return console.error("ingrese una cadena");
+   
+    let regulares = /^[a-z\s]+$/.test(nombre);
+    if(regulares)
+    {
+        console.info("nombre valido");
+    }
+    else
+    {
+        console.error("no es un nombre");
+    }
+
+  }
+  //validanombre("benjamin josue23");
+  //let patron23=/^[a-z]+$/;
+  //if (patron23.test("125665")) console.info("correcto");
+
+  const vectorpotencia =(vector) => {
+
+    let nuevovector=[];
+    for (let elem of vector)
+    {
+
+        nuevovector.push(Math.pow(elem,2));
+    }
+
+    console.log(nuevovector);
+
+  }
+
+  const ordenararreglo = (arreglo =undefined) => {
+    if (arreglo===undefined) return console.error("debe de ingresar un valor");
+    if (!(arreglo instanceof Array)) return console.error("no es un arrary");
+   
+    if (arreglo.length===0) return console.error("arreglo vacio");
+
+    for(let elem of arreglo)
+    {
+        if(typeof(elem) !=="number") return console.error("el valor " + elem + "no es un numero");
+    }
+
+    console.info({
+        original :arreglo,
+        ascendente : arreglo.map((elemento) => elemento).sort() ,
+        descendente : arreglo.map((elemento) => elemento).sort().reverse() 
+    });
+    
+    
+  }
+  const sinduplicados = (arreglo =undefined) => {
+    if (arreglo===undefined) return console.error("debe de ingresar un valor");
+    if (!(arreglo instanceof Array)) return console.error("no es un arrary");
+   
+    if (arreglo.length===0) return console.error("arreglo vacio");
+
+    for(let elem of arreglo)
+    {
+        if(typeof(elem) !=="number") return console.error("el valor " + elem + "no es un numero");
+    }
+
+    console.info({
+        original :arreglo,
+        sinduplicados : arreglo.filter((elem,index,arr) => arr.indexOf(elem)=== index)
+    });
+    
+    
+  }
+  const obtenerpromedio = (arreglo =undefined) => {
+    if (arreglo===undefined) return console.error("debe de ingresar un valor");
+    if (!(arreglo instanceof Array)) return console.error("no es un arrary");
+   
+    if (arreglo.length===0) return console.error("arreglo vacio");
+
+    for(let elem of arreglo)
+    {
+        if(typeof(elem) !=="number") return console.error("el valor " + elem + "no es un numero");
+    }
+
+    console.info({
+        original :arreglo,
+        promedio : arreglo.reduce((acum,elem) => acum +elem )
+    });
+    
+    
+  }
+  //ordenararreglo([1,2,10,5]);
+  //vectorpotencia([1,2,3,4])
+  //sinduplicados([1,2,10,5,10,5,2]);
+  obtenerpromedio([1,2,10,5]);
+  
+  let arreglo = [1,2,3,4,5];
+  let nuevoarreglo =arreglo.map( (elem) => {
+     return elem*2;
+
+  });
+  let paresarreglo =arreglo.filter( (elem) => {
+     return elem % 2 === 0 ;
+
+  });
+
+/*
+  (() => {
+      console.log("Código Síncrono");
+      console.log("Inicio");
+      function dos() {
+        console.log("Dos");
+      }
+      function uno() {
+        console.log("Uno");
+        dos();
+        console.log("Tres");
+      }
+      uno();
+      console.log("Fin");
+    })();
+*/
+   /* (() => {
+      console.log("Código Asíncrono");
+      console.log("Inicio");
+      function dos() {
+        setTimeout(function () {
+          console.log("Dos");
+        }, 1000);
+      }
+      function uno() {
+        setTimeout(function () {
+          console.log("Uno");
+        }, 0);
+        dos();
+        console.log("Tres");
+      }
+      uno();
+      console.log("Fin");
+    })(); 
+*/
+   
+
+//console.log("este es el fin");
+
+/*
+let resultado=2;
+const mipromesa = new Promise((reso,reyect) => {
+console.log("estoy haciendo principio");
+if(resultado===1)
+{
+reso("se hizo");
+}
+else
+{
+reyect("error fatal");
+}
+})
+*/
+//mipromesa
+//.then(resul => console.log(resul))
+//.catch((error) => console.log(error));
+
+
+
+/*
+async function devolver()
+{
+    console.log("inicio")
+   const respuesta = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+   const json = await respuesta.json()
+   console.log(json)
+   console.log("final")
+   //return json
+   // retorna una promesa
+
+}
+
+devolver();
+console.log("benjamin huaman ");
+*/
+
+console.log("benjamin huaman soto ");
+console.log(nombre);
+console.log("continuamos ");
+
+//console.error();
+    </script>
+</body>
+</html>
