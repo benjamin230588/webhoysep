@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+  
+    #contenedor {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4,100px);
+  grid-gap: 10px;
+  }
+  .hijo{
+      background-color: gray;
+  }
+ </style>
+</head>
+<body>
+   
+ <script>
+
+const usuarios =[
+    {id:1,nombre:"benjamin" ,idprofesion:1},
+    {id:2,nombre:"jose" ,idprofesion:2},
+    {id:3,nombre:"miguel" ,idprofesion:3},
+    
+]
+
+const profesion={
+    1:"ingeniero",
+    2:"contador",
+    3:"chofer"
+ }
+
+ const proefesion1={
+    id:1 ,descripcion:"ingeniero"
+ }
+
+//console.log(usuarios);
+//console.log(proefesion);
+//console.log(proefesion1);
+
+
+function getusuarios()
+{
+return new Promise((resol,reyect) => {
+    console.log("primero")
+setTimeout(() => {
+    resol(usuarios);
+}, 5000)
+})
+}
+
+function getusuario(id)
+{
+    return new Promise((resol,reyect) => {
+        setTimeout(() => {
+        resol(usuarios.filter((usuario) => usuario.id===id)[0]);
+        }, 2000);
+    })
+}
+
+function getprofesion(id)
+{
+    return new Promise((resol,reyect) => {
+        setTimeout(() => {
+        resol(profesion[id]);
+        }, 2000)
+    })
+}
+
+
+//console.log(getusuarios())
+//getusuarios()
+//.then((usuarios) =>  console.log(usuarios))
+//.then((usuarios) => { console.log(usuarios) }) 
+//getusuario(2)
+//////////////////////////////////////////////////
+ getusuarios()
+.then((usuarios) =>  getusuario(usuarios[0].id) ) 
+.then((usuario) => getprofesion(usuario.idprofesion))
+.then((profesion) => console.log(profesion))
+
+//getusuarios()
+//.then((usuarios) => { console.log(getusuario(usuarios[2].id)) }) 
+//.then((usuario1) => { 
+  //  console.log(usuario1)})
+    //getprofesion(usuario.idprofesion) })
+//.then((profesion) => console.log("eres"  ))
+
+/*
+getprofesion(2)
+.then( (profesion) => { console.log("la es " + profesion)} )
+//getusuarios(() => { console.log(usuarios) })
+/*getusuarios((err,usuarios) => {
+ const alejandroid =usuarios[2].id;
+
+ getusuario(alejandroid,(err,usuario) => {
+ const profesionid =usuario.profesion
+ console.log("la profesion es " , profesionid)
+ getprofesion(profesionid,(err,profesion) => {
+ console.log("la profesion es " , profesion)
+
+ })
+
+
+
+ })
+})
+*/
+ </script>  
+    
+    
+  
+</body>
+</html>
