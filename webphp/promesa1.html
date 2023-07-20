@@ -45,7 +45,7 @@ const profesion={
 function getusuarios()
 {
 return new Promise((resol,reyect) => {
-    console.log("primero")
+    //console.log("primero")
 setTimeout(() => {
     resol(usuarios);
 }, 5000)
@@ -70,18 +70,34 @@ function getprofesion(id)
     })
 }
 
+async function   funcionasincrona(){
 
+    try{
+        let url=  "https://jsonplaceholder.typicode.com/todos/1";
+    let res1= await fetch(url);
+    let res2= await res1.json();
+    //console.log(res2.title);
+    return res2.title;
+    }
+    catch(err){
+        throw err;
+    }
+    
+}
+funcionasincrona()
+.then(x => console.log(x))
+.catch(err => console.log(err))
 //console.log(getusuarios())
 //getusuarios()
 //.then((usuarios) =>  console.log(usuarios))
 //.then((usuarios) => { console.log(usuarios) }) 
 //getusuario(2)
 //////////////////////////////////////////////////
- getusuarios()
+/* getusuarios()
 .then((usuarios) =>  getusuario(usuarios[0].id) ) 
 .then((usuario) => getprofesion(usuario.idprofesion))
 .then((profesion) => console.log(profesion))
-
+*/
 //getusuarios()
 //.then((usuarios) => { console.log(getusuario(usuarios[2].id)) }) 
 //.then((usuario1) => { 
@@ -109,6 +125,25 @@ getprofesion(2)
  })
 })
 */
+/*
+ getusuarios()
+.then((usuarios) =>  {
+    getusuario(usuarios[0].id)
+    .then((usuario) => {
+        getprofesion(usuario.idprofesion)
+        .then((profesion) => console.log(profesion))
+        .catch(err => console.log(err))
+    
+    
+    })
+    .catch(err => console.log(err))
+
+
+} )
+.catch(err => console.log(err)) 
+*/
+//catch capturamos el reyect el error
+//cuando encadenamos promesas podemos utilizar un cath general
  </script>  
     
     
