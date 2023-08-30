@@ -9,6 +9,7 @@
 <body>
     benja hoy es otro dia 
     <button id="boton">dale</button>
+    <div id="codigo">hola</div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -20,12 +21,16 @@
 })
         })*/
 
- fetch('prueba.txt',{ })
-  .then(response => response.text())
-  .then(data => { 
-    console.log(data)} )
+ //fetch('prueba.txt',{ })
+  //.then(response => response.text())
+  //.then(data => { 
+    //console.log(data)} )
   
-       
+      let x= $("#codigo") ;
+      let tit = document.getElementById('codigo');
+      console.log("jquery :",x);
+      console.log("javascript :",tit.innerHTML);
+      
     </script>
 </body>
 </html>

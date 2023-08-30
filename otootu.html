@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        .recuadrointerior {
+    font-family: Courier;
+    font-size: 12px;
+    background-color: #ffffcc;
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #ffaa00;
+    padding: 20px;
+}
+
+.recuadroexterior {
+    font-family: Courier;
+    font-size: 12px;
+    background-color: #ff9900;
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #ffaa00;
+    padding: 20px;
+}
+    </style>
+</head>
+
+<body>
+    <h1>Presione con el mouse en el recuadro interior y en el recuadro exterior.</h1>
+    <h3>Si disponemos false en el tercer parámetro de la función addEventListener</h3>
+    <div id="div1e" class="recuadroexterior">
+        Este es contenido del recuadro exterior.
+        <div id="div1i" class="recuadrointerior">
+            Este es contenido del recuadro interior.
+        </div>
+        También es contenido del recuadro exterior.
+    </div>
+    <h3>Si disponemos true en el tercer parámetro de la función addEventListener</h3>
+    <div id="div2e" class="recuadroexterior">
+        Este es contenido del recuadro exterior.
+        <div id="div2i" class="recuadrointerior">
+            Este es contenido del recuadro interior.
+        </div>
+        También es contenido del recuadro exterior.
+    </div>
+    <script src="funciones.js"></script>
+</body>
+<script>
+    document.getElementById('div1i').addEventListener('click', presionRecuadroInte)
+//document.getElementById('div1e').addEventListener('click', presionRecuadroExte)
+document.getElementById('div2i').addEventListener('click', presionRecuadroInte, true)
+document.getElementById('div2e').addEventListener('click', presionRecuadroExte, true)
+
+function presionRecuadroInte() {
+    alert('se presionó el recuadro interior')
+}
+
+function presionRecuadroExte() {
+    alert('se presionó el recuadro exterior')
+}
+</script>
+
+</html>
