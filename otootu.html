@@ -30,6 +30,10 @@
 </head>
 
 <body>
+    <span>@(ViewBag.numerofinal)</span>
+    <input type="button" value="dale" id="btngrabar" />
+    <input type="file" id="files">
+    <img src="" id="previa" width="400">
     <h1>Presione con el mouse en el recuadro interior y en el recuadro exterior.</h1>
     <h3>Si disponemos false en el tercer parámetro de la función addEventListener</h3>
     <div id="div1e" class="recuadroexterior">
@@ -62,6 +66,25 @@ function presionRecuadroInte() {
 function presionRecuadroExte() {
     alert('se presionó el recuadro exterior')
 }
+function handleFileSelect(evt){
+    var f = evt.target.files[0]; // FileList object
+    const reader = new FileReader();
+
+  reader.onload = () => {
+    console.log("dddd" ,reader.result);
+    base64URL = window.btoa(reader.result);
+    console.log("base dd" ,base64URL);
+    
+  };
+
+  reader.readAsBinaryString(f);
+}
+
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    } else {
+        alert('The File APIs are not fully supported in this browser.');
+    }
 </script>
 
 </html>
